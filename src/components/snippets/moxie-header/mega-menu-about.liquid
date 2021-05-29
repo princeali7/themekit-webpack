@@ -1,0 +1,14 @@
+<div class="flex small-drop-down-menu about-menu" >
+    <div class="inner-side-nav story-about">  
+      {% assign InnerMenu = linklists['story-about'] %}
+      <ul class="side-menu-inside-megamenu">
+        {%- for lnk in InnerMenu.links -%}
+        <li>   
+          <a href="{{ lnk.url }}"  onclick="MenuEvent('Mega Nav','','{{lnk.title | strip_html}}','{{lnk.url}}')" 
+          class="inner-link">{{ lnk.title }}</a>
+        </li> 
+        {% endfor %}
+      </ul>
+    </div>
+    
+  </div>

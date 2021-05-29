@@ -27,7 +27,7 @@
     {%- endunless -%}
   {%- endcapture -%}
   <title>{{ seo_title | strip }}</title>
-
+  <link rel="icon" href="https://cdn.shopify.com/s/files/1/2569/3918/files/moxielash_icon_98f15d4a-efc5-43c3-b72a-858b4d7232b3.jpg?1538" />
   {%- comment -%}Varibles{%- endcomment -%}
   {{ content_for_header }}
   {% render 'global-css' %}
@@ -43,15 +43,7 @@
 <body id="{{ page_title | handle }}" class="template-{{ template.name | handle }}">
   {% section 'header' %}
 
-  {% if shop.customer_accounts_enabled %}
-    {% if customer %}
-      <a href="/account">account</a>
-      {{ 'log out'  | customer_logout_link }}
-    {% else %}
-      {{ 'log in ' | customer_login_link }}
-      {{ 'register' | customer_register_link }}
-    {% endif %}
-  {% endif %}
+   
 
   <main role="main" id="MainContent">
     {{ content_for_layout }}

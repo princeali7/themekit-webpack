@@ -1,0 +1,25 @@
+<section class="meta-hero-banner">
+    {%- include 'load_moxiemeta' , text: section.settings.id -%} 
+</section> 
+  
+  {% schema %}
+    {
+      "name": "Hero Banner",
+      "settings": [ 
+
+        {
+          "type": "text",
+          "id": "metafield_key",
+          "label": "Banner MetaField"
+        }
+         
+      ],
+      "presets": [
+        {
+          "name": "Meta Hero Banner",
+          "category": "Banner"
+        }
+      ]  
+    }  
+  {% endschema %}
+  

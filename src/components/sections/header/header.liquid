@@ -1,59 +1,12 @@
-<section data-section-id="{{ section.id }}">
-  {%-  if section.settings.announcement_bar_enabled -%}
-  <div class="announcement-bar-container text-center p-2">
-    {%-  if section.settings.announcement_bar_link != blank -%}
-    <a href="{{ section.settings.announcement_bar_link }}">
-      {{ section.settings.announcement_bar_text }}
-    </a>
-    {%-  else -%}
-    <p>{{ section.settings.announcement_bar_text }}</p>
-    {%-  endif -%}
-  </div>
-  {%-  endif -%}
-  <nav class="nav-bar-container flex items-center justify-between flex-wrap p-6">
-    <div class="flex items-center flex-shrink-0 mr-6">
-        {%- if section.settings.logo != blank -%}
-            <div>
-              <a href="/">
-                {%- capture image_size -%}{{ section.settings.logo_max_width }}x{%- endcapture -%}
-                <img src="{{ section.settings.logo | img_url: image_size }}"
-                  srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
-                  alt="{{ section.settings.logo.alt | default: shop.name }}">
-              </a>
-        </div>
-        {%- endif -%}
-        <a href="/"><span class="font-semibold text-xl tracking-tight">{{ shop.name }}</span></a>
-    </div>
-    <div class="flex-grow flex items-center w-auto">
-      <ul class="text-sm flex-grow">
-        {%- for link in linklists[section.settings.menu].links -%}
-        {%- if link.links != blank -%}
-        <li class="inline-block mt-0 mr-4">
-          <a href="{{ link.url }}">{{ link.title }}</a>
-          <ul class="text-sm flex-grow">
-            {%- for childlink in link.links -%}
-            <li class="inline-block mt-0 mr-4"><a href="{{ childlink.url }}">{{ childlink.title }}</a>
-            </li>
-            {%- endfor -%}
-          </ul>
-        </li>
-        {%- else -%}
-        <li class="inline-block mt-0 mr-4"><a href="{{ link.url }}">{{ link.title }}</a></li>
-        {%- endif -%}
-        {%- endfor -%}
-      </ul>
-    </div>
-  </nav>
-</section>
-
-{% schema %}
+{% include 'moxie-header' %}
+{% schema %} 
 {
   "name": "Header",
   "settings": [{
           "type": "header",
           "content": "Announcement Bar"
       },
-      {
+      { 
           "type": "checkbox",
           "id": "announcement_bar_enabled",
           "label": "Show Announcement",

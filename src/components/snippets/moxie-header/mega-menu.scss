@@ -1,0 +1,100 @@
+.moxie-mega-menu {
+    @apply absolute inset-x-0 z-10 hidden transform -translate-y-1 shadow-lg opacity-0 top-full;
+    background-color: #1e1e1e;
+    .mega-menu-wrapper {
+        @apply flex px-4 py-6 mx-auto w-full;
+        max-width: 90vw;
+    }
+    ul.side-menu-inside-megamenu {
+        a {
+            background: black;
+            color: white;
+            width: 280px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+            padding: 0px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-family: 'Brandon';
+            font-size: 14px;
+            &:hover {
+                font-weight: bold;
+            }
+        }
+
+       
+    }
+    .__site-links-col-right-desktop {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+    .__links_title_nav_dp {
+        font-family: futura;
+        font-size: 14px;
+        text-transform: uppercase;
+        line-height: 19px;
+        letter-spacing: 0.24px;
+        color: white;
+        font-weight: 600;
+        display: block;
+        text-align: left;
+        /* width: 120px; */
+        margin-bottom: 20px;
+    }
+
+    ul._links-list-right li {
+        height: 35px;
+    }
+    ._links-list-right {
+        padding-left: 0px;
+        display: flex;
+        flex-direction: column;
+
+        color: white;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+} 
+.small-drop-down-menu {
+    display: none;
+    .side-menu-inside-megamenu a{
+        background: black;
+        color: white;
+        width: 280px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        padding: 0px;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        font-family: 'Brandon';
+        font-size: 14px;
+        &:hover {
+            font-weight: bold;
+        }
+    }
+    
+}
+
+.single-menu-item:hover {
+    .moxie-mega-menu {
+        opacity: 1;
+        display: block;
+    }
+  
+    
+    .small-drop-down-menu {
+        display: block;
+        position: absolute; 
+        top: 60px;
+        background: #1e1e1e;
+        color: white;
+        padding: 20px 20px;
+    }
+}
+
+@import './mega-menu-collections.scss';
