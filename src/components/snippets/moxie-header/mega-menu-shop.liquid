@@ -1,26 +1,23 @@
-<div
-class="moxie-mega-menu mega-menu-shop"
-> 
-<div
-  class="mega-menu-wrapper"
-> 
-<div class="w-1/6 inner-side-nav shop-now">
-  {% assign InnerMenu = linklists['inner-shop-menu'] %}
-  <ul class="side-menu-inside-megamenu">
-    {%- for lnk in InnerMenu.links -%}
-    <li>  
-      <a href="{{ lnk.url }}"  onclick="MenuEvent('Mega Nav','','{{lnk.title | strip_html}}','{{lnk.url}}')" 
-      class="inner-link">{{ lnk.title }}</a>
-    </li> 
-    {% endfor %}
-  </ul>
-</div> 
+<div class="moxie-mega-menu mega-menu-shop">
+    <div class="mega-menu-wrapper">
+        <div class="inner-side-nav shop-now">
+            {% assign InnerMenu = linklists['inner-shop-menu'] %}
+            <ul class="side-menu-inside-megamenu">
+                {%- for lnk in InnerMenu.links -%}
+                <li>
+                    <a
+                        href="{{ lnk.url }}"
+                        onclick="MenuEvent('Mega Nav','','{{ lnk.title | strip_html }}','{{
+                            lnk.url
+                        }}')"
+                        class="inner-link"
+                        >{{ lnk.title }}</a
+                    >
+                </li>
+                {% endfor %} 
+            </ul>
+        </div>
 
-<div class="w-4/6 shop-all-menu-filter">
-    
-  {% include "filter-shop-all" %}
+        <div class="w-4/6 shop-all-menu-filter">{% include "filter-shop-all" %}</div>
+    </div> 
 </div>
-
-</div>
-
-</div> 

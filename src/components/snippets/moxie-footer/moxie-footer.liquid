@@ -1,0 +1,90 @@
+
+{{ 'bundle.moxie-footer.css' | asset_url | stylesheet_tag }}
+ 
+
+<footer class="bg-black moxie-footer" aria-labelledby="footerHeading">
+    <h2 id="footerHeading" class="sr-only">Footer</h2>
+    <div class="px-4 py-12 mx-auto moxie-container sm:px-6 lg:py-16 lg:px-8">
+      <div class="flex ">
+        <div class="w-full footer-menus">
+          <div class="flex flex-wrap md:flex-nowrap">
+            <div class="w-full single-footer-menu">
+              <h3 class="footer-menu-title">
+                SHOP
+              </h3>
+              <ul class="mt-4 space-y-4 footer-menu-list">
+                {%- for link in linklists['footer-shop'].links -%}
+
+                <li><a onclick="MenuEvent('FOOTERMENU','','{{link.title}}','{{link.url}}')"   href="{{ link.url }}">{{ link.title }}</a></li>
+               
+               
+                {% endfor %}
+               
+              </ul>
+            </div>
+            <div class="single-footer-menu">
+              <h3 class="footer-menu-title">
+                ABOUT
+              </h3>
+              <ul class="mt-4 space-y-4 footer-menu-list">
+                {%- for link in linklists['brand'].links -%}
+
+                <li><a onclick="MenuEvent('FOOTERMENU','','{{link.title}}','{{link.url}}')"   href="{{ link.url }}">{{ link.title }}</a></li>
+               
+               
+                {% endfor %}
+               
+              </ul>
+            </div>
+            <div class="single-footer-menu">
+              <h3 class="footer-menu-title">
+                HELP
+              </h3>
+              <ul class="mt-4 space-y-4 footer-menu-list">
+                {%- for link in linklists['help'].links -%}
+
+                <li><a onclick="MenuEvent('FOOTERMENU','','{{link.title}}','{{link.url}}')"   href="{{ link.url }}">{{ link.title }}</a></li>
+               
+               
+                {% endfor %}
+               
+              </ul>
+            </div>
+            <div class="single-footer-menu">
+              <h3 class="footer-menu-title">
+                LEGAL
+              </h3>
+              <ul class="mt-4 space-y-4 footer-menu-list">
+                {%- for link in linklists['legal'].links -%}
+
+                <li><a onclick="MenuEvent('FOOTERMENU','','{{link.title}}','{{link.url}}')"   href="{{ link.url }}">{{ link.title }}</a></li>
+               
+               
+                {% endfor %}
+               
+              </ul>
+            </div>
+          </div>
+       
+        </div>
+        <div class="flex justify-center w-2/6 mt-8 xl:mt-0">
+          <div class="sm-container">
+            <div class="footer-column__title" style="display: block">ENGAGE ON SOCIAL</div>
+            {%- include 'social-icon-top'  -%}
+ 
+             
+            <div class="footer-column__title footer-column__title--contact">Need to get in touch?</div>
+            <div class="footer-column__contact-link"><a href="mailto:support@moxielash.com">support@moxielash.com</a></div>
+            
+            
+            <div id="shopify-section-country-picker" class="shopify-section">
+            
+            </div>
+          
+          </div>
+        </div>
+      </div>
+     
+    </div>
+</footer>    
+{{ 'bundle.moxie-footer.js' | asset_url | script_tag }}  

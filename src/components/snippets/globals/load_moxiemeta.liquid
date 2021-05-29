@@ -1,7 +1,8 @@
 {%- assign _meta = shop.metafields.FBMeta -%}
-<!-- {{shop.metafields | json}} -->
+ <!-- text {{text}} -->
 {%- if text contains 'metafield-' -%}
 {%- assign key  = text | replace:'metafield-' -%}
+<!-- key {{key}} -->
 {%- assign text = _meta[key]  -%}
 <!-- text {{_meta[key]}} --> 
 {%- if _meta[key] -%}

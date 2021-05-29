@@ -1,0 +1,24 @@
+.moxie-container{
+    width: 1480px;
+    max-width: 85%;
+
+}
+.moxie-footer{
+
+    color: white;
+    font-size: 10px;
+    font-family: brandon;;
+    .single-footer-menu {
+        width: 25%;
+        text-transform: uppercase;
+        @media (max-width:767px){
+            width:100%; 
+        }
+    }
+    .social-tool-bar{
+        padding:10px 0px ; 
+    }
+    .footer-column__contact-link {
+        padding-top: 10px;
+    }
+}
